@@ -13,7 +13,7 @@ public class Casino{
     * Obtener casino, si no existe instancia lo crea y lo devuelve, caso contrario devuelve la instancia que existe
     */
     public static Casino getCasino(){
-        return (this.casino!=null) ? this.casino: new Casino();
+        return (casino!=null) ? casino: new Casino();
     }
 
     

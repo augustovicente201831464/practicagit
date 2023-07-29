@@ -1,68 +1,65 @@
-
 package com.cunoc.practicagit.juegocarta.dto;
 
 /*
  *
  * @author Augusto Vicente
  */
-public class Baraja{
+public class Baraja {
 
     //Patron singleton
-    private Baraja(){
+    private Baraja() {
 
     }
 
     /*
     *
     * Si no se ha inicializado la baraja se crear uno y se retorna caso contrario solo se retorna lo creado
-    */
-    public static Baraja getBaraja(){
-        return (this.baraja!=null) ? this.baraja: new Baraja();
+     */
+    public static Baraja getBaraja() {
+        return (baraja != null) ? baraja : new Baraja();
     }
 
-    public Carta[] getCartas(){
+    public Carta[] getCartas() {
         return this.cartas;
-    } 
+    }
 
-    public void setCartas(Carta[] cartas){
+    public void setCartas(Carta[] cartas) {
         this.cartas = cartas;
     }
 
-    public int getNumeroCartas(){
+    public int getNumeroCartas() {
         return this.numeroCartas;
     }
 
-    public void setNumeroCartas(int numeroCartas){
+    public void setNumeroCartas(int numeroCartas) {
         this.numeroCartas = numeroCartas;
     }
 
-    public int getCartasRestantes(){
+    public int getCartasRestantes() {
         return this.cartasRestantes;
     }
 
-    public void setCartasRestantes(int cartasRestantes){
+    public void setCartasRestantes(int cartasRestantes) {
         this.cartasRestantes = cartasRestantes;
     }
 
-    public int getCartasRepartidas(){
+    public int getCartasRepartidas() {
         return this.cartasRepartidas;
-    }   
+    }
 
-    public void setCartasRepartidas(int cartasRepartidas){
+    public void setCartasRepartidas(int cartasRepartidas) {
         this.cartasRepartidas = cartasRepartidas;
     }
 
-    public boolean getMezclada(){
-        return this.mezclada;
+    public boolean isMezclada() {
+        return mezclada;
     }
 
-    public void setMezclada(boolean mezclada){
+    public void setMezclada(boolean mezclada) {
         this.mezclada = mezclada;
     }
-    
 
     private static Baraja baraja;
-
     private Carta[] cartas;
     private int numeroCartas;
     private int cartasRestantes;
