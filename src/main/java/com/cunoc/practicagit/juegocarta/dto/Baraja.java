@@ -1,5 +1,7 @@
 package com.cunoc.practicagit.juegocarta.dto;
 
+import java.util.Random;
+
 /*
  *
  * @author Augusto Vicente
@@ -8,7 +10,16 @@ public class Baraja {
 
     //Patron singleton
     private Baraja() {
-
+        //Crear a las 52 cartas
+        
+        barajar();
+    }
+    
+    private void barajar(){
+        
+        Random random = new Random();
+        
+        
     }
 
     /*
@@ -19,12 +30,20 @@ public class Baraja {
         return (baraja != null) ? baraja : new Baraja();
     }
 
-    public Carta[] getCartas() {
-        return this.cartas;
+    public Carta[] getCartasDisponibles() {
+        return this.cartasDisponibles;
     }
 
-    public void setCartas(Carta[] cartas) {
-        this.cartas = cartas;
+    public void setCartasDisponibles(Carta[] cartasDisponibles) {
+        this.cartasDisponibles = cartasDisponibles;
+    }
+
+    public Carta[] getCartasSacadas() {
+        return cartasSacadas;
+    }
+
+    public void setCartasSacadas(Carta[] cartasSacadas) {
+        this.cartasSacadas = cartasSacadas;
     }
 
     public int getNumeroCartas() {
@@ -60,7 +79,10 @@ public class Baraja {
     }
 
     private static Baraja baraja;
-    private Carta[] cartas;
+
+    //
+    private Carta[] cartasDisponibles;
+    private Carta[] cartasSacadas;
     private int numeroCartas;
     private int cartasRestantes;
     private int cartasRepartidas;
