@@ -16,7 +16,7 @@ public class App {
     public App() {
         this.ahorcado = new Ahorcado();
         this.basquetball = new Basketball();
-        this.casino = new Casino();
+        this.casino = Casino.getCasino();
     }
 
     public void iniciar(String[] argumentosIniciales) {
