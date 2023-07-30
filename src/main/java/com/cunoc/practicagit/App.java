@@ -14,7 +14,7 @@ public class App {
     private Juego casino;
 
     public App() {
-        this.ahorcado = new Ahorcado();
+        this.ahorcado = Ahorcado.getAhorcado();
         this.basquetball = new Basketball();
         this.casino = Casino.getCasino();
     }

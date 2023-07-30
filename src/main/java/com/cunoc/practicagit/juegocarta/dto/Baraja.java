@@ -14,7 +14,7 @@ public class Baraja {
 
     // Patron singleton
     private Baraja() {
-        // Crear a las 52 cartas
+        // Crear a las 48 cartas
         apilarCartasBaraja();
 
         // Barajar a las cartas
