@@ -31,6 +31,11 @@ public class Palo {
         return this.simbolo;
     }
 
+    @Override
+    public String toString() {
+        return "Palo{" + "paloNombre=" + paloNombre + ", simbolo=" + simbolo + '}';
+    }
+
     private final PaloNombre paloNombre;
     private char simbolo;
 
