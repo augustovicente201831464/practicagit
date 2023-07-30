@@ -15,7 +15,7 @@ public class App {
     private boolean ejecutandoApp;
 
     public App() {
-        this.ahorcado = new Ahorcado();
+        this.ahorcado = Ahorcado.getAhorcado();
         this.basquetball = new Basketball();
         this.casino = Casino.getCasino();
         ejecutandoApp = true;
