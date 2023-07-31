@@ -22,7 +22,7 @@
                     </descriptorRefs>
                     <archive>
                         <manifest>
-                            <mainClass>com.cunoc.practicagit.App</mainClass>
+                            <mainClass>com.cunoc.practicagit.Main</mainClass>
                         </manifest>
                     </archive>
                 </configuration>

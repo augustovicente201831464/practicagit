@@ -20,7 +20,6 @@ target/
 !/src/main//target/
 .class
 !/src/test//target/
-.jar
 
 ### STS ###
 .apt_generated
