@@ -1,5 +1,7 @@
 package com.cunoc.practicagit.jugadores;
 
+import java.util.Scanner;
+
 /**
  *
  * @author usuario
@@ -23,8 +25,12 @@ public class Basquetbolista extends Jugador {
     private int probabilidadLanzamiento;
     private int probabilidadFalta;
 
-    public void aumentarPuntos() {
+    public void aumentarPuntosLanzamiento() {
         puntosTotales = puntosTotales + puntosLanzamiento;
+    }
+
+    public void aumentarPuntosLibre() {
+        puntosTotales = puntosTotales + PUNTOS_TIRO_LIBRE;
     }
 
     public void disminuirPunteria(int probabilidadDefensa) {
@@ -72,11 +78,12 @@ public class Basquetbolista extends Jugador {
     }
 
     public void abandonarJuego(Basquetbolista rival) {
-        System.out.println("\n\n--------------------------------------------------");
-        System.out.println("             JUEGO DE BASKETBALL");
-        System.out.println("--------------------------------------------------");
+        System.out.println("\n---------------Juego Abandonado------------------");
         System.out.println("El jugador: " + getNombre() + " se ha retirado");
         System.out.println("Ganador: " + rival.getNombre());
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Presione \"ENTER\" para continuar... ");
+        scanner.nextLine();
     }
 
 }

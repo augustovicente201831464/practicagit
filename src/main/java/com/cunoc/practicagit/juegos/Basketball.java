@@ -62,6 +62,7 @@ public class Basketball extends Juego {
                     break;
                 case 2:
                     //regresa al menu principal
+                    System.out.println("\n");
                     break;
                 default:
                     throw new InputMismatchException();
@@ -101,13 +102,17 @@ public class Basketball extends Juego {
 
     private void mostrarResultadoPartido() {
         mostrarEncabezado();
+        System.out.println("\n-----------Resultado Final del Partido----------");
         if (basquetbolista1.getPuntosTotales() > basquetbolista2.getPuntosTotales()) {
-            System.out.println("el ganador es: " + basquetbolista1.getNombre());
+            System.out.println("El ganador es: " + basquetbolista1.getNombre());
         } else if (basquetbolista1.getPuntosTotales() < basquetbolista2.getPuntosTotales()) {
-            System.out.println("el ganador es: " + basquetbolista2.getNombre());
+            System.out.println("El ganador es: " + basquetbolista2.getNombre());
         } else if (basquetbolista1.getPuntosTotales() == basquetbolista2.getPuntosTotales()) {
-            System.out.println("el resultado es empate");
+            System.out.println("El resultado es empate");
         }
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Presione \"ENTER\" para continuar... ");
+        scanner.nextLine();
     }
 
     private void mostrarEncabezado() {
@@ -120,41 +125,41 @@ public class Basketball extends Juego {
     }
 
     private void mostrarResultadoLanzamiento() {
-        System.out.println("--------------------------------------------------");
-        System.out.println("\n\n             Resultados del turno #" + turnosCompletados);
-        System.out.println("--------------------------------------------------");
+        System.out.println("\n-------------Resultados del turno #" + turnosCompletados + "-----------");
+        Scanner scanner = new Scanner(System.in);
         Random random = new Random();
         int numero;
         //lanzamiento
         numero = random.nextInt(100) + 1;
         if (numero > 0 && numero <= atacante.getProbabilidadLanzamiento()) {
             System.out.println("Jugador en ataque (" + atacante.getNombre() + ") ha anotado " + atacante.getPuntosLanzamiento() + " puntos");
-            atacante.aumentarPuntos();
+            atacante.aumentarPuntosLanzamiento();
         } else if (numero > atacante.getProbabilidadLanzamiento() && numero <= 100) {
-            System.out.println("Jugador en ataque (" + atacante.getNombre() + ") ha fallado el lanzamiento");
+            System.out.println("Jugador en ataque (" + atacante.getNombre() + ") ha fallado el lanzamiento de " + atacante.getPuntosLanzamiento() + " puntos");
         }
         //falta
         numero = random.nextInt(100) + 1;
         if (numero > 0 && numero <= atacante.getProbabilidadFalta()) {
             System.out.println("Jugador en defensa (" + defensor.getNombre() + ") ha cometido falta ");
-            System.out.println("Jugador en ataque (" + atacante.getNombre() + ") PRESIONE \"ENTER\" PARA LAZAR EL TIRO LIBRE");
-            Scanner scanner = new Scanner(System.in);
-            String enter = scanner.nextLine();
+            System.out.println("Jugador en ataque (" + atacante.getNombre() + ") PRESIONE \"ENTER\" PARA LAZAR EL TIRO LIBRE...");
+            scanner.nextLine();
             //lanzamiento tiro libre
             numero = random.nextInt(100) + 1;
             if (numero > 0 && numero <= Basquetbolista.PROBABILIDAD_ANOTAR_LIBRE) {
                 System.out.println("Jugador en ataque (" + atacante.getNombre() + ") ha anotado el Tiro Libre de " + Basquetbolista.PUNTOS_TIRO_LIBRE + " puntos");
-                atacante.aumentarPuntos();
+                atacante.aumentarPuntosLibre();
             } else if (numero > Basquetbolista.PROBABILIDAD_ANOTAR_LIBRE && numero <= 100) {
                 System.out.println("Jugador en ataque (" + atacante.getNombre() + ") ha fallado el Tiro Libre");
             }
         } else if (numero > atacante.getProbabilidadFalta() && numero >= 100) {
             System.out.println("Jugador en defensa (" + defensor.getNombre() + ") no ha cometido falta ");
         }
+        System.out.println("Presione \"ENTER\" para continuar... ");
+        scanner.nextLine();
     }
 
     private void atacar() throws InputMismatchException {
-        System.out.println("--------------Turno de la ofensiva----------------");
+        System.out.println("\n--------------Turno de la ofensiva----------------");
         System.out.println("1.Lanzamiento largo desde 5 metros (3 puntos). La probabilidad de anotar es de 65%");
         System.out.println("2.Lanzamiento corto desde 3 metros (2 puntos). La probabilidad de anotar es de 80%");
         System.out.println("3.Abandonar juego (perderá automáticamente)");
@@ -182,14 +187,14 @@ public class Basketball extends Juego {
                     throw new InputMismatchException();
             }
         } catch (InputMismatchException e) {
-            System.out.println("\nIngrese una opcion valida (numero entre 1 y 3)");
+            System.out.println("Ingrese una opcion valida (numero entre 1 y 3)");
             seleccionarAtaque();
         }
     }
 
     private void defender() {
-        System.out.println("---------------Turno de la defensiva--------------");
-        System.out.println("\n1.Defensa cuerpo a cuerpo, reduce la probabilidad de anotar en un 15% y probabilidad de hacer falta del 35%");
+        System.out.println("\n---------------Turno de la defensiva--------------");
+        System.out.println("1.Defensa cuerpo a cuerpo, reduce la probabilidad de anotar en un 15% y probabilidad de hacer falta del 35%");
         System.out.println("2.Defensa fuerte, reduce la probabilidad de anotar en un 30%  y probabilidad de hacer falta del 65%");
         System.out.println("3.Abandonar juego (perderá automáticamente)");
         SeleccionarDefensa();
@@ -217,13 +222,9 @@ public class Basketball extends Juego {
                     throw new InputMismatchException();
             }
         } catch (Exception e) {
-            System.out.println("\nIngrese una opcion valida (numero entre 1 y 3)");
+            System.out.println("Ingrese una opcion valida (numero entre 1 y 3)");
             SeleccionarDefensa();
         }
-    }
-
-    private void tirarLibre() {
-        System.out.println("Tiro libre dado a un jugador cuando se le realiza una falta, vale 2 puntos y la probabilidad de anotar es de 90% ");
     }
 
     private void ingresarNombres() {
