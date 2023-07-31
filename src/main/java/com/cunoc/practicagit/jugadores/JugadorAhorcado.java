@@ -6,7 +6,11 @@ package com.cunoc.practicagit.jugadores;
  */
 public class JugadorAhorcado extends Jugador {
 
-    public JugadorAhorcado() {
+    public JugadorAhorcado(int id) {
+        this.id = id;
+        vecesFallado = 0;
+        vecesAdivinado = 0;
+        intentosActuales = 0;
     }
 
     public int getVecesAdivinado() {
@@ -25,10 +29,22 @@ public class JugadorAhorcado extends Jugador {
         this.vecesFallado = vecesFallado;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public int getIntentosActuales() {
+        return intentosActuales;
+    }
+
+    public void setIntentosActuales(int intentosActuales) {
+        this.intentosActuales = intentosActuales;
+    }
+
     @Override
     public String toString() {
-        return "JugadorAhorcado{\n"
-                + "\nnombre: " + getNombre() + ","
+        return "\nJugadorAhorcado{"
+                + "id=" + id + ","
                 + "\nvecesAdivinado=" + vecesAdivinado + ","
                 + "\nvecesFallado=" + vecesFallado + '}';
     }
@@ -41,7 +57,9 @@ public class JugadorAhorcado extends Jugador {
         this.caracteresAdivinados = caracteresAdivinados;
     }
 
+    private final int id;
     private char[] caracteresAdivinados;
+    private int intentosActuales;
     private int vecesAdivinado;
     private int vecesFallado;
 }
