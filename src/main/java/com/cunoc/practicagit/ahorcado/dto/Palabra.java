@@ -8,7 +8,7 @@ public class Palabra {
 
     public Palabra(String valor) {
         this.valor = valor;
-        actualizarCaracteres(valor);    
+        actualizarCaracteres(valor);
     }
 
     public String getValor() {
@@ -28,6 +28,15 @@ public class Palabra {
         return caracteres;
     }
 
+    public boolean isAdivinado() {
+        return adivinado;
+    }
+
+    public void setAdivinado(boolean adivinado) {
+        this.adivinado = adivinado;
+    }
+
+    private boolean adivinado;
     private String valor;
     private char[] caracteres;
 }

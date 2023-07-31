@@ -20,7 +20,7 @@ public class DibujoAhorcado {
         intentosMaximos = cantDeIntentosSegunDibujo();
     }
 
-    public void dibujar(int fila, int col) {
+    private void dibujar(int fila, int col) {
         char c = getDibujo()[fila][col];
 
         getDibujoBase()[fila + 1][col] = c;
