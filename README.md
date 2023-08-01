@@ -17,7 +17,12 @@ La librería de juegos cuenta con 3 juegos en total:
 Obtiene el ejecutable presionando al link a continuación
 [Ejecutable](practicagit-0.0.1.jar)
 
-Mostrar diagrama de clases con el link a continuación
-[Diagrama de clases](assets/Diagrama_clases.png)
+En este practica se usaron diagramas de clases o flujo. Se puede acceder a ellos en los enlaces que están a continuación:
+* [Diagrama de clases](assets/Diagrama_clases.png)
+* [Diagarama de flujo basketball](assets/Diagrama_de_flujo_basketball.png)
+* [Diagrama de flujo general](assets/Diagrama_de_flujo_general.png)
+
+Y el archivo de los algorimtos principales a continuación
+* [Algoritmos principales](assets/Algoritmos_de_métodos_importantes.txt)
 
 __Versión de juego v0.0.1__
