@@ -1,0 +1,59 @@
+//MÉTODO PARA PROCESAR LOS TURNOS EN EL JUEGO DE BASKETBALL.
+Procedimiento realizarJuego()
+    Si partidoTerminado es Falso entonces
+        Si jugadasCompletadas módulo 2 es igual a 0 entonces
+            llamar a mostrarEncabezado()
+            Si turnosCompletados módulo 2 es igual a 0 entonces
+                asignar basquetbolista1 a atacante
+                asignar basquetbolista2 a defensor
+            sino
+                asignar basquetbolista2 a atacante
+                asignar basquetbolista1 a defensor
+            Fin Si
+            llamar a atacar()
+        sino
+            llamar a defender()
+            Si jugando es Verdadero entonces
+                llamar a mostrarResultadoLanzamiento()
+                Si turnosCompletados es igual a cantidadDeTurnos entonces
+                    asignar Verdadero a partidoTerminado
+                Fin Si
+            Fin Si
+        Fin Si
+    sino
+        llamar a mostrarResultadoPartido()
+        asignar Falso a jugando
+    Fin Si
+Fin Procedimiento
+
+
+//METODO PARA GENERAR EL RESULTADO DE UN LANZAMIENTO EN EL JUEGO DE BASKETBALL
+Procedimiento mostrarResultadoLanzamiento()
+    Escribir "Resultados del turno #" + turnosCompletados"
+    Var numero
+
+    // Lanzamiento
+    numero = random(100)
+    Si numero es mayor que 0 y menor o igual a atacanteProbabilidadLanzamiento entonces
+        Escribir "Jugador en ataque (" + atacante.getNombre() + ") ha anotado " + atacantePuntosLanzamiento + " puntos"
+        atacanteAumentarPuntosLanzamiento()
+    Sino si numero es mayor que atacanteProbabilidadLanzamiento y menor o igual a 100 entonces
+        Escribir "Jugador en ataque (" + atacanteNombre + ") ha fallado el lanzamiento de " + atacantePuntosLanzamiento + " puntos"
+    Fin Si
+
+    // Falta
+    numero = random(100)
+    Si numero es mayor que 0 y menor o igual a atacanteProbabilidadFalta entonces
+        Escribir "Jugador en defensa (" + defensorNombre + ") ha cometido falta"
+        // Lanzamiento tiro libre
+        numero = random(100)
+        Si numero es mayor que 0 y menor o igual a PROBABILIDAD_ANOTAR_LIBRE entonces
+            Escribir "Jugador en ataque (" + atacanteNombre + ") ha anotado el Tiro Libre de " + PUNTOS_TIRO_LIBRE + " puntos"
+            atacanteAumentarPuntosLibre()
+        Sino si numero es mayor que PROBABILIDAD_ANOTAR_LIBRE y menor o igual a 100 entonces
+            Escribir "Jugador en ataque (" + atacanteNombre + ") ha fallado el Tiro Libre"
+        Fin Si
+    Sino si numero es mayor que atacanteProbabilidadFalta y menor o igual a 100 entonces
+        Escribir "Jugador en defensa (" + defensorNombre + ") no ha cometido falta"
+    Fin Si
+Fin Procedimiento
