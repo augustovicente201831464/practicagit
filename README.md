@@ -9,6 +9,21 @@ Para ejecutar el programa, utiliza el siguiente comando:
 ```bash
 java -jar practicagit-0.0.1.jar
 ```
+
+Para ejecutar con parametro para el juego ahorcado
+```bash
+java -jar practicagit-0.0.1.jar ahorcado
+```
+
+Para ejecutar con parametro para el juego basketball
+```bash
+java -jar practicagit-0.0.1.jar basketball
+```
+
+Para ejecutar con parametro para el juego casino
+```bash
+java -jar practicagit-0.0.1.jar casino
+```
 ----------------------
 El manual de usuario se encuentra en la carpeta assets de esta práctica
 o accediendo al link que está a continuacion:
