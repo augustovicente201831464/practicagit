@@ -7,7 +7,7 @@
 Para ejecutar el programa, utiliza el siguiente comando:
 
 ```bash
-java -jar java -jar practicagit-0.0.1.jar
+java -jar practicagit-0.0.1.jar
 ```
 ----------------------
 El manual de usuario se encuentra en la carpeta assets de esta práctica
