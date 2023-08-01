@@ -10,7 +10,10 @@ La librería de juegos cuenta con 3 juegos en total:
 * Juego de basketball
 * Juego de casino
 
-Y el ejecutable se encuentra en
-[ejecutable](practicagit-0.0.1.jar)
+Obtiene el ejecutable presionando al link a continuación
+[Ejecutable](practicagit-0.0.1.jar)
+
+Mostrar diagrama de clases con el link a continuación
+[Diagrama de clases](assets/Diagrama_clases.png)
 
 __Versión de juego v0.0.1__
