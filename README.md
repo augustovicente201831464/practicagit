@@ -1,5 +1,6 @@
 # practicagit
-
+201831464 Augusto Vicente y Vicente
+201630832 Carlos Eduardo Vásquez Aguilar
 ----------------------
 El manual de usuario se encuentra en la carpeta assets de esta práctica
 o accediendo al link que está a continuacion:
