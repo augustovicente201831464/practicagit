@@ -1,4 +1,4 @@
-# Integrantes
+# Integrantes del grupo __6__
 * __201831464 Augusto Vicente y Vicente__
 * __201630832 Carlos Eduardo Vásquez Aguilar__
 
